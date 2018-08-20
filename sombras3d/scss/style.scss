@@ -1,0 +1,63 @@
+// font family
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+// icons font
+@import url('http://fontastic.s3.amazonaws.com/wXUejw7cV5KRrdtkS8GFFi/icons.css');
+
+// functions
+@function shadow($numero, $color){
+    $shadow: 1px 1px #{$color};
+    @for $i from 1 through $numero {
+        $shadow:   '#{$shadow},
+                        #{$i}px #{$i}px #{$color}';
+    }
+    @return unquote($shadow);
+}
+
+// styles
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Luckiest Guy';
+    height: 100vh;
+    background: darken(steelblue, 15%)
+}
+
+// Texto 3D
+.texto3d{
+    font-size: 5em;
+    color: #eee;
+    text-shadow: shadow(15, #000);
+    transform: rotate(-10deg);
+}
+//##############################
+
+//Long shadow
+.longShadow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: rgba(#000, 0.3);
+    font-family: Oswald;
+    font-weight: 700;
+    font-size: 48px;
+    color: rgba(#fff,0.4);
+    box-shadow: shadow(1000, darken(steelblue, 35%));
+}
+//##############################
+
+// icon shadow
+
+.icon-twitter{
+    font-size: 20em;
+    color: darken(steelblue, 25%);
+    text-shadow: shadow(500, darken(steelblue, 30%))
+}
